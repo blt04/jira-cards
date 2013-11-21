@@ -18,6 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_runtime_dependency "oauth"
+  spec.add_runtime_dependency "highline"
   spec.add_runtime_dependency "prawn"
   spec.add_runtime_dependency "rest-client"
   spec.add_runtime_dependency "thor"
