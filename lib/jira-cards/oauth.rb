@@ -1,15 +1,5 @@
-require 'oauth'
-require 'securerandom'
-require 'yaml'
-
-require 'jira-cards/config'
-
 module JiraCards
   class OAuth
-    APP_NAME = 'jira-cards'
-    # A fake URL used as the endpoint for the Jira Application Link
-    APP_URL = "http://localhost:8988/#{APP_NAME}"
-
     def authorized?
       !!(config.access_token)
     end
@@ -47,9 +37,9 @@ module JiraCards
       config.save!
 
       {
-        app_name: APP_NAME,
-        app_url: APP_URL,
-        consumer_name: APP_NAME,
+        app_name: JiraCards::FAKE_JIRA_APP_NAME,
+        app_url: JiraCards::FAKE_APP_URL,
+        consumer_name: JiraCards::FAKE_JIRA_APP_NAME,
         consumer_key: config.consumer_key,
         public_key: config.rsa_public_key.to_pem,
       }

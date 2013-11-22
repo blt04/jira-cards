@@ -1,0 +1,4 @@
+--format html -o coverage/rspec.html
+--format nested
+--colour
+--drb

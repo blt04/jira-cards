@@ -1,9 +1,7 @@
-require 'highline'
-require 'thor'
-
 module JiraCards
   class CLI < Thor
     class << self
+
       def fetch_story(story_id)
         
       end
@@ -13,7 +11,6 @@ module JiraCards
     method_option :force, :aliases => "-f", :type => :boolean, :desc => "Recreate the link if it already exists"
     method_option :url, :aliases => "-u", :desc => "Jira URL"
     def create_link
-      require 'jira-cards/oauth'
       oauth = JiraCards::OAuth.new
 
       if oauth.linked?
@@ -57,7 +54,6 @@ EOS
     desc "authorize", "Authorize the jira-cards application using your credentials"
     method_option :force, :aliases => "-f", :type => :boolean, :desc => "Reauthorize if an access token already exists"
     def authorize
-      require 'jira-cards/oauth'
       oauth = JiraCards::OAuth.new
 
       unless oauth.linked?
