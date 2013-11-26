@@ -85,7 +85,7 @@ EOS
 
       verification_code = ask("Verification Code:")
       if oauth.verify_authorization(verification_code)
-        puts "SUCCESS!  Your OAuth access token is #{oauth.config.access_token}"
+        puts "SUCCESS!  Your OAuth access token is #{oauth.config.access_token}, and your access secret is #{oauth.config.access_secret}"
       else
         $stderr.puts "ERROR: There was an error generating your OAuth token"
         exit 1
