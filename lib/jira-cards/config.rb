@@ -63,9 +63,8 @@ class Config
       # those with accessors
       key = var.to_s[1..-1]
       if respond_to?(key)
-        val = send(key)
+        memo[key] = send(key)
       end
-      memo[key] = val
       memo
     end
   end
