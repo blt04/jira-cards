@@ -30,6 +30,6 @@ Once you have completed the setup steps, accessing the Jira API is easy.  To get
 
     require 'jira-cards'
     token = JiraCards::OAuth.new.access_token
-    response = token.get('https://your-jira-url/rest/api/2/issue/JIRA-1234
+    response = token.get('https://your-jira-url/rest/api/2/issue/JIRA-1234')
     issue = JSON.parse(response.body)
     summary = issue['fields']['summary']
